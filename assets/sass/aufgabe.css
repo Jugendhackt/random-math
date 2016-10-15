@@ -1,7 +1,7 @@
 #stepsolving, #sent {
   display: none; }
 
-#stepsolvingbtn, #sentbtn, #send_step, #next {
+#stepsolvingbtn, #sentbtn, #send_step, #next, #backtothemes {
   background-color: #03a9f4;
   margin-bottom: 10px; }
 
