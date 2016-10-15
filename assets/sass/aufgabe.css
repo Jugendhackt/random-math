@@ -1,9 +1,11 @@
 #stepsolving, #sent, #stepright, #stepsolution {
   display: none; }
 
-#stepsolvingbtn, #sentbtn, #send_step, #next, #backtothemes {
+.button {
   background-color: #03a9f4;
   margin-bottom: 10px; }
+  .button:hover {
+    background-color: #03a9f4 !important; }
 
 #term {
   padding: 5px;
