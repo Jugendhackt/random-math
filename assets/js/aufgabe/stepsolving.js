@@ -1,16 +1,35 @@
-function getParameterByName(name, url) {
-  if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-    results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
 $('#stepsolvingbtn').click(function () {
-  var step = 1
-  $('#stepsolving_schrittid').text(step)
+  localStorage.setItem('step', 0)
+  $('#stepsolving_schrittid').text(localStorage.getItem('step')+1)
   $('#start').hide()
   $('#stepsolving').show()
+})
+
+$('#send_step').click(function () {
+  if(1 == 2) {
+  } else {
+    if(localStorage.getItem('step') == '2') {
+      toastr["info"]("Der Tipp", "Tipp")
+
+      toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "25000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      }
+    }
+  }
+  localStorage.setItem('step', parseInt(localStorage.getItem('step'))+1)
+  $('#stepsolving_schrittid').val($('#stepsolving_schrittid').val()+1)
 })
