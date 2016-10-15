@@ -4,6 +4,7 @@ import math
 import JsonGenerator
 
 class TrigonometriePendel(object):
+    typ = None
 
     def __init__(self):
         self.typ = "Physik_Pendel"
@@ -30,9 +31,5 @@ class TrigonometriePendel(object):
 
     def anJson(self):
         self.aufgabeErstellen()
-        JsonGenerator.generateJsonDatei(self.typ, self.aufgabenText(), self.tipp, self.loesung())
+        return JsonGenerator.generateJsonDatei(self.typ, self.aufgabenText(), self.tipp, self.loesung())
 
-
-
-test = TrigonometriePendel()
-test.anJson()
