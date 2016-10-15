@@ -7,27 +7,29 @@ from bottle import run, post, request, response, get, route
 
 import trigonometrischeFunktionen
 
+def allow_cors(func):
+    """ this is a decorator which enable CORS for specified endpoint """
+    def wrapper(*args, **kwargs):
+        response.headers['Access-Control-Allow-Origin'] = '*.*'
+        # * in case you want to be accessed via any website
+        return func(*args, **kwargs)
+    return wrapper
 
 @route('/hello')
 def hallo():
     return "Hello World!"
 
-
 @route('/favicon.ico')
 def icon():
     pass
-
-"""
-@route('/return2')
-def other
-"""
 
 @route('/<path>', method = 'GET')
 def process(path):
     if path == 'trigonometrie':
         pendel = trigonometrischeFunktionen.TrigonometriePendel()
-        print pendel.anJson()
         return pendel.anJson()
+    elif path == 'gaussian'
+        return "Hier kommen aufgaben zum gauss'schen Algorithmus"
     elif path == 'polynome':
         return "Hier kommen demnaechst polynome :P"
 
