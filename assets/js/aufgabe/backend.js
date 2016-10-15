@@ -10,7 +10,7 @@ function getParameterByName(name, url) {
 
 $.ajax({
   method: 'GET',
-  url: 'http://localhost:61535/' + getParameterByName('thema')
+  url: 'http://randommathserver.labcode.de/' + getParameterByName('thema')
 }).done(function (data) {
   var obj = JSON.parse(data)
   localStorage.setItem('loesung', obj.Loesung)
