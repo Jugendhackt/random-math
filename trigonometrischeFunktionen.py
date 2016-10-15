@@ -31,5 +31,5 @@ class TrigonometriePendel(object):
 
     def anJson(self):
         self.aufgabeErstellen()
-        return JsonGenerator.generateJsonDatei(self.typ, self.tipp, self.aufgabenText(), self.loesung())
+        return JsonGenerator.generateJsonDatei(self.typ, self.aufgabenText(), [self.loesung()], self.tipp)
 
