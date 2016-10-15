@@ -7,3 +7,10 @@ var entered = $('#text').val()
   // < TO DO THIS
   $('#solving_sent').attr("value", entered)
 })
+$('#nextexercisebtn').click(function () {
+  $("#sent").hide()
+  $("#start").show()
+})
+$('#backtothemesbtn').click(function () {
+  window.location.href = "index.html"
+})

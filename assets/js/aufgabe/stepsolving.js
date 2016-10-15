@@ -5,6 +5,16 @@ $('#stepsolvingbtn').click(function () {
   $('#stepsolving').show()
 })
 
+$('#next_stepbtn').click(function () {
+  $('#stepright').hide()
+  $('#stepsolving').show()
+})
+
+$('#nextstepbtn').click(function () {
+  $('#stepsolution').hide()
+  $('#stepsolving').show()
+})
+
 $('#send_stepbtn').click(function () {
   if(1 == 2) {
     $('#stepsolving').hide()
