@@ -3,3 +3,7 @@
 
 #stepsolving, #sent {
   background-color: #03a9f4; }
+
+#term {
+  padding: 5px;
+  border: 2px dotted #000; }
