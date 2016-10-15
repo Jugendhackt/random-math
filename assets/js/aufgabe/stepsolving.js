@@ -7,8 +7,10 @@ $('#stepsolvingbtn').click(function () {
 
 $('#send_stepbtn').click(function () {
   if(1 == 2) {
+    $('#stepsolving').hide()
+    $('#stepright').show()
   } else {
-    if(localStorage.getItem('step') == '2') {
+    if(localStorage.getItem('step') == '1') {
       toastr["info"]("Der Tipp", "Tipp")
 
       toastr.options = {
@@ -29,9 +31,13 @@ $('#send_stepbtn').click(function () {
         "hideMethod": "fadeOut"
       }
     }
-  }
+    else if(localStorage.getItem('step') == '2') {
+      $('#stepsolving').hide()
+      $('#stepsolution').show()
+    }
+    }
   localStorage.setItem('step', parseInt(localStorage.getItem('step'))+1)
   $('#stepsolving_schrittid').val($('#stepsolving_schrittid').val()+1)
   $('#stepsolving_wrong').show()
-  console.log('tesr')
+
 })
