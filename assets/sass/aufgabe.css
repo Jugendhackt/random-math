@@ -14,3 +14,7 @@
 #stepsolving_wrong {
   color: #b71c1c;
   display: none; }
+
+.toast, .toast-info {
+  min-width: 500px !important;
+  padding: 15px; }
