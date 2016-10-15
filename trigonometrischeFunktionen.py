@@ -1,7 +1,7 @@
 #Aufgabe: momentane Auslenkung berechnen bei gegebener Fraquenz, Zeit, max. Auslenkung
 import random
 import math
-
+import JsonGenerator
 
 class TrigonometriePendel(object):
 
@@ -13,7 +13,7 @@ class TrigonometriePendel(object):
         self.tipp = "Die Formel = s(t) = amplitude * sin(2 * pi * frequenz + phase)"
 
     def aufgabenText(self):
-        return "Berechne die momentane Auslenkung des Fadenpendels, max. Auslenkung: %d, Frequenz %d, Phase %d"\
+        return "Berechne die momentane Auslenkung des Fadenpendels bei einer Sekunde, max. Auslenkung: %d, Frequenz %d, Phase %d"\
             %(self.amplitude, self.frequenz, self.phase)
 
     def aufgabeErstellen(self):
@@ -28,10 +28,11 @@ class TrigonometriePendel(object):
     def loesung(self):
         return round(self.amplitude * math.sin(2 * math.pi * self.frequenz + self.phase), 2)
 
+    def anJson(self):
+        self.aufgabeErstellen()
+        JsonGenerator.generateJsonDatei(self.typ, self.aufgabenText(), self.tipp, self.loesung())
+
 
 
 test = TrigonometriePendel()
-test.aufgabeErstellen()
-print(test.phase)
-print(test.aufgabenText())
-print(test.loesung())
+test.anJson()
