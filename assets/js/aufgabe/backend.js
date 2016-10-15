@@ -14,7 +14,6 @@ $.ajax({
   method: 'GET',
   url: 'http://randommathserver.labcode.de/' + getParameterByName('thema')
 }).done(function (data) {
-  console.log(data)
   var obj = JSON.parse(data)
   localStorage.setItem('loesung', btoa(obj.Loesung))
   localStorage.setItem('tipp', obj.Tipp)
