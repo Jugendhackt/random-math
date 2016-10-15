@@ -5,7 +5,7 @@
 import subprocess
 from bottle import Bottle, run, post, request, response, get, route
 
-import trigonometrischeFunktionen
+import trigonometrischeFunktionen, curve_sketching, linerareGleichungsSysteme
 
 def allow_cors(func):
     """ this is a decorator which enable CORS for specified endpoint """
@@ -31,10 +31,17 @@ def process(path):
     if path == 'trigonometrie':
         pendel = trigonometrischeFunktionen.TrigonometriePendel()
         return pendel.anJson()
-    elif path == 'gaussian':
+    if path == 'gaussian':
         return "Hier kommen aufgaben zum gauss'schen Algorithmus"
-    elif path == 'polynome':
-        return "Hier kommen demnaechst polynome :P"
+    if path == 'polynome1':
+        return curve_sketching.generatePolynomeExercise(1)
+    if path == 'polynome2':
+        return curve_sketching.generatePolynomeExercise(2)
+    if path == 'polynome3':
+        return curve_sketching.generatePolynomeExercise(3)
+    if path == 'linearegls':
+        gls = linerareGleichungsSysteme.LGS()
+        return gls.anJson()
 
     # return subprocess.check_output(['python',path + '.py'])
     return "Nothing here yet! Come back later for more content!"

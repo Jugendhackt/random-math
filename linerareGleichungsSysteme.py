@@ -44,20 +44,12 @@ class LGS(object):
         erg_3 = fakListe[3] * self.x1 + fakListe[4] * self.x2 + fakListe[5] * self.x3
         self.tipp += "%d = %d * x1 + %d * x2 + %d * x3"%(erg_3, fakListe[3], fakListe[4], fakListe[5])"""
 
-
-
-
-
-
-
-
-
-
-
-
     def zufall1_15(self):
         return random.randint(1, 15)
 
-
+"""
 lgs = LGS()
 lgs.anJson()
+
+
+"""
