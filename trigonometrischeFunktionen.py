@@ -4,7 +4,6 @@ import math
 import JsonGenerator
 
 class TrigonometriePendel(object):
-    typ = None
 
     def __init__(self):
         self.typ = "Physik_Pendel"
@@ -14,7 +13,8 @@ class TrigonometriePendel(object):
         self.tipp = "Die Formel = s(t) = amplitude * sin(2 * pi * frequenz + phase)"
 
     def aufgabenText(self):
-        return "Berechne die momentane Auslenkung des Fadenpendels bei einer Sekunde, max. Auslenkung: %d, Frequenz %d, Phase %d"\
+        return "Welche auslenkung hat das Pendel zum Zeitpunkt eine Sekunde? Angaben: max. Auslenkung: %d,\
+         Frequenz %d, Phasenverschiebung %d Pi (Bogenmass)"\
             %(self.amplitude, self.frequenz, self.phase)
 
     def aufgabeErstellen(self):
@@ -31,5 +31,9 @@ class TrigonometriePendel(object):
 
     def anJson(self):
         self.aufgabeErstellen()
-        return JsonGenerator.generateJsonDatei(self.typ, self.aufgabenText(), [self.loesung()], self.tipp)
+        JsonGenerator.generateJsonDatei(self.typ, self.aufgabenText(), self.tipp, self.loesung())
 
+
+
+test = TrigonometriePendel()
+test.anJson()

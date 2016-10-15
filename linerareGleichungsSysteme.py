@@ -9,21 +9,9 @@ class LGS(object):
         self.tipp = ""
         self.lgs = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
 
-    """def aufgabeErstellen(self):
-        self.x1 = random.randint(1, 15)
-        self.x2 = random.randint(1, 15)
-        self.x2 = random.randint(1, 15)
-        ausgaben = ""
-        for gleichung in range(3):
-            faktor_1 = self.zufall1_15()
-            faktor_2 = self.zufall1_15()
-            faktor_3 = self.zufall1_15()
-            gleichung = faktor_1 * self.x1 + faktor_2 * self.x2 + faktor_3 * self.x3
-            antwort = "%d = %d * x1 + %d * x2 + %d * x3"%(gleichung, faktor_1, faktor_2, faktor_3)
-            ausgaben += antwort + "\n"
-        return ausgaben"""
 
-    def gaussDreieck(self):
+
+    def anJson(self):
         fakListe = []
         for x in range(3):
             print(x)
@@ -44,8 +32,10 @@ class LGS(object):
 
         lgs_schritte = lgsSchritte.LGSSchritte(self.lgs, self.loesungen)
         lgs_schritte.verkomplizieren(lgs_schritte.matrix)
-        lgs_schritte.rueckwaerts()
+        schritte = lgs_schritte.rueckwaerts()
 
+        anJson = [self.typ, lgs_schritte.aufgabe , self.loesungen, "Believe in Yourself!" , schritte]
+        return anJson
 
         """erg_1 = fakListe[0] * self.x1
         self.tipp += "%d = %d * x1 \n"%(erg_1, fakListe[0])
@@ -70,4 +60,4 @@ class LGS(object):
 
 
 lgs = LGS()
-lgs.gaussDreieck()
+lgs.anJson()

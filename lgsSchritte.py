@@ -9,10 +9,10 @@ class LGSSchritte(object):
         self.veraenderungSpeichern = []
         self.gl_1Speichern = []
         self.gl_2Speichern = []
+        self.aufgabe = []
 
     def verkomplizieren(self, Lmatrix):
         for x in range(3):
-            print(Lmatrix)
             self.matrixSpeichern.append(deepcopy(Lmatrix))
             while True:
                 aendern = random.randint(0, 2)
@@ -34,11 +34,20 @@ class LGSSchritte(object):
                 gl_1[x] += gl_2[x]
             Lmatrix[aendern] = gl_1
             self.matrixSpeichern.append(deepcopy(Lmatrix))
+            self.aufgabe = deepcopy(Lmatrix)
+
+            self.aufgabe = self.aufgabeSchoen()
+
+    def aufgabeSchoen(self):
+        antwort = "Gegeben sind die Gleichungen: \n"
+        for gleichung in self.aufgabe:
+            antwort += "%d * a + %d * b + %d * c = %d \n"%(gleichung[0], gleichung[1], gleichung[2], gleichung[3])
+        antwort += "Berechne a, b und c"
+        return antwort
 
     def rueckwaerts(self):
-        antwort = "Die Schritte: \n"
-        antwort += "x1: %d, x2: %d, x3: %d \n"%(self.loesungen[0], self.loesungen[1], self.loesungen[2])
-
+        gesamtantwort = []
+        antwort = ""
         c = len(self.gl_1Speichern) - 1
 
         self.matrixSpeichern.reverse()
@@ -49,8 +58,6 @@ class LGSSchritte(object):
         a = 1
 
         for matrix in self.matrixSpeichern:
-            print("m")
-            print(matrix)
             antwort += str(matrix)
             if a == 1:
                 antwort += "    Gleichung Nummer %d von Gleichung %d abziehen und das Ergebnis durch %d teilen \n"\
@@ -58,9 +65,11 @@ class LGSSchritte(object):
                 c = c-1
             if a == -1:
                 antwort += "    folgt daraus. \n"
+                gesamtantwort.append(antwort)
+                antwort = ""
             a = a*-1
         antwort += "Achtung!!, dies ist kein effizienter Loesungsweg"
-        return antwort
+        return gesamtantwort
 
 
 
