@@ -7,11 +7,14 @@ function getParameterByName(name, url) {
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-
+if(getParameterByName('thema') == 'trigonometrie') {
+  $('#exerciseimg').attr('src', 'assets/img/Fadenpendel_alembert.svg.png')
+}
 $.ajax({
   method: 'GET',
   url: 'http://randommathserver.labcode.de/' + getParameterByName('thema')
 }).done(function (data) {
+  console.log(data)
   var obj = JSON.parse(data)
   localStorage.setItem('loesung', obj.Loesung)
   localStorage.setItem('tipp', obj.Tipp)
