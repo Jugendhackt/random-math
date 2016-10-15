@@ -31,8 +31,7 @@ $('#sentbtn').click(function() {
   }
 })
 $('#nextexercisebtn').click(function () {
-  $("#sent").hide()
-  $("#start").show()
+  window.location.reload()
 })
 $('#backtothemesbtn').click(function () {
   window.location.href = "index.html"

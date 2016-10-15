@@ -17,7 +17,9 @@ $.ajax({
   localStorage.setItem('tipp', obj.Tipp)
   localStorage.setItem('aufgabe', obj.Aufgabe)
   localStorage.setItem('schritte', obj.Schritte)
+  localStorage.setItem('rechenweg', obj.Tipp)
   $('#aufgabe').text(localStorage.getItem('aufgabe'))
+  $('#rechenweg').text(localStorage.getItem('rechenweg'))
   if(localStorage.getItem('schritte') == 'undefined'){
     $('#stepsolvingbtn').addClass('disabled')
   }
