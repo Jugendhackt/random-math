@@ -22,10 +22,14 @@
   <h3>Aufgabe:</h3>
   <p id="aufgabe"></p>
     <div id="start">
-      <div class="input-field">
-        <input type="text" id="text">
-        <label for="text">L&ouml;sung:</label>
-      </div>
+        <div class="row">
+            <div class="col s6 offset-s3">
+            <div class="input-field">
+                <input type="text" id="text">
+                <label for="text">L&ouml;sung:</label>
+          </div>
+        </div>
+        </div>
       <a id="stepsolvingbtn" class="waves-effect waves-light btn-large button">Schrittweise l&ouml;sen</a>
       <br>
       <a id="sentbtn" class="waves-effect waves-light btn-large button">Absenden</a>
@@ -46,9 +50,13 @@
     <div id="stepsolving">
         <h4>Schritt <span id="stepsolving_schrittid"></span></h4>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus</p>
-        <div class="input-field">
-            <input type="text" id="solving_step">
-            <label for="text">L&ouml;sung:</label>
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <div class="input-field">
+                    <input type="text" id="solving_step">
+                    <label for="text">L&ouml;sung:</label>
+                </div>
+            </div>
         </div>
         <a class="waves-effect btn-large waves-light button" id="send_stepbtn">Absenden</a>
         <h4 id="stepsolving_wrong">Leider Falsch!</h4>

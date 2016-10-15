@@ -1,8 +1,10 @@
 $('#stepsolvingbtn').click(function () {
-  localStorage.setItem('step', 0)
-  $('#stepsolving_schrittid').text(localStorage.getItem('step')+1)
-  $('#start').hide()
-  $('#stepsolving').show()
+  if(!$('#stepsolvingbtn').hasClass('disabled')) {
+    localStorage.setItem('step', 0)
+    $('#stepsolving_schrittid').text(localStorage.getItem('step')+1)
+    $('#start').hide()
+    $('#stepsolving').show()
+  }
 })
 
 $('#next_stepbtn').click(function () {
