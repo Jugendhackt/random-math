@@ -51,3 +51,15 @@ $('#send_stepbtn').click(function () {
   $('#stepsolving_wrong').show()
 
 })
+
+//Bei falscher Eingabe der Lösung bei #start
+//$('#sentbtn').click(function () {
+//  $('#start').hide()
+//  $('#stepsolving').show()
+//})
+
+//Beim letzten Schritt:
+//$('#next_stepbtn').click(function () {
+//  $('#stepright').hide()
+//  $('#sent').show()
+//})
