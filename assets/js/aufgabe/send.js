@@ -1,4 +1,4 @@
-$('#sent').click(function() {
+$('#sentbtn').click(function() {
 var entered = $('#text').val()
   $('#start').hide()
   $('#sent').show()
