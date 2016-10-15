@@ -16,7 +16,7 @@ $.ajax({
 }).done(function (data) {
   console.log(data)
   var obj = JSON.parse(data)
-  localStorage.setItem('loesung', obj.Loesung)
+  localStorage.setItem('loesung', btoa(obj.Loesung))
   localStorage.setItem('tipp', obj.Tipp)
   localStorage.setItem('aufgabe', obj.Aufgabe)
   localStorage.setItem('schritte', obj.Schritte)
