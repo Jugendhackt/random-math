@@ -10,3 +10,7 @@
 #term {
   padding: 5px;
   border: 2px dotted #000; }
+
+#stepsolving_wrong {
+  color: #b71c1c;
+  display: none; }

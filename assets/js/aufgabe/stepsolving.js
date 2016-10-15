@@ -5,7 +5,7 @@ $('#stepsolvingbtn').click(function () {
   $('#stepsolving').show()
 })
 
-$('#send_step').click(function () {
+$('#send_stepbtn').click(function () {
   if(1 == 2) {
   } else {
     if(localStorage.getItem('step') == '2') {
@@ -32,4 +32,6 @@ $('#send_step').click(function () {
   }
   localStorage.setItem('step', parseInt(localStorage.getItem('step'))+1)
   $('#stepsolving_schrittid').val($('#stepsolving_schrittid').val()+1)
+  $('#stepsolving_wrong').show()
+  console.log('tesr')
 })
