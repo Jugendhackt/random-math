@@ -16,4 +16,6 @@ $.ajax({
   localStorage.setItem('loesung', obj.Loesung)
   localStorage.setItem('tipp', obj.Tipp)
   localStorage.setItem('aufgabe', obj.Aufgabe)
+  $('#aufgabe').text(localStorage.getItem('aufgabe'))
+
 })

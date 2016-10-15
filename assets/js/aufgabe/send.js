@@ -1,5 +1,6 @@
 $('#sentbtn').click(function() {
-var entered = $('#text').val()
+  var entered = $('#text').val()
+  if(entered == localStorage.getItem('loesung'))
 
   $('#start').hide()
   //NOT COOL >
