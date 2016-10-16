@@ -13,11 +13,13 @@ class Vektoren(object):
             self.vektor_2[i] = random.randint(1, 5)
 
     def laenge_vektor(self, vektor):
-        return math.sqrt(math.pow(vektor, 2)+ math.pow(vektor, 2) + math.pow(vektor, 2))
+        return math.sqrt(math.pow(vektor[0], 2)+ math.pow(vektor[1], 2) + math.pow(vektor[2], 2))
 
     def winkelVektoren(self):
         oben = self.vektor_1[0] * self.vektor_2[0] + self.vektor_1[1] * self.vektor_2[1] + self.vektor_1[2] * self.vektor_2[2]
         unten = math.sqrt(self.laenge_vektor(self.vektor_1) * self.laenge_vektor(self.vektor_2))
+        if unten == 0:
+            return math.acos(0)
         return math.acos(oben / unten)
 
     def anJson(self):
@@ -33,6 +35,10 @@ class Vektoren(object):
             antwort = self.winkelVektoren()
             anJson = ["Vektoren", aufgabe, antwort, "tipp fehlt", "keine Schritte"]
         return anJson
+
+vaktor = Vektoren()
+print(vaktor.anJson())
+
 
 
 
