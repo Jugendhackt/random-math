@@ -99,7 +99,8 @@ class ZeroTerm(Show):
 
     # showing this Zero-Based-Term as a Polynome, meaning in the form: a * x ^ n + b * x ^ n-1 + ... + d
     def showAsPolynome(self):
-        return fold(lambda x, y: y.show() + ' + ' + x, getPolynome(self), '')
+        return ' + '.join(filter(lambda x: x != '', map(lambda x: x.show(), getPolynome(self) ) ) )
+#        return fold(lambda x, y: y.show() + ' + ' + x, getPolynome(self), '')
 
 
 # noZero as well as prefZero are numbers
@@ -223,7 +224,8 @@ def simplify(mults): # :: [Mult] -> [Mult]
 def generatePolynomeExercise(n):
     zeroterm = ZeroTerm(n)
     zeros    = zeroterm.getZeros()
-    aufgabe  = zeroterm.showAsPolynome() + "\n" + random.choice(["Berechne die nullstellen!", "Wo schneidet die Funktion die x-Achse?"])
+    aufgabe  = zeroterm.showAsPolynome() + "\n" + random.choice(["Berechne die nullstellen!",
+        "Wo schneidet die Funktion die x-Achse?", "An welchen punkten ist y=0?"])
     tipp     = random.choice(['Newton-Formel! xn+1 = xn - f(xn) / f\'(xn)', 'Polynomdivision!'])
     schritte = map( (lambda z: 'Nullstelle bei ' + str(z) ), zeros)
     return JsonGenerator.generateJsonDatei("Polynom_Nullstellen", aufgabe, zeros, tipp, schritte)

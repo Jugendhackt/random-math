@@ -5,7 +5,7 @@
 import subprocess
 from bottle import Bottle, run, post, request, response, get, route
 
-import trigonometrischeFunktionen, curve_sketching, linerareGleichungsSysteme
+import trigonometrischeFunktionen, curve_sketching, linerareGleichungsSysteme, vektoren
 
 def allow_cors(func):
     """ this is a decorator which enable CORS for specified endpoint """
@@ -42,6 +42,11 @@ def process(path):
     if path == 'linearegls':
         gls = linerareGleichungsSysteme.LGS()
         return gls.anJson()
+    if path == 'vector':
+        vec = vektoren.Vektoren()
+        return vec.anJson()
+    if path == 'numbers':
+        pass
 
     # return subprocess.check_output(['python',path + '.py'])
     return "Nothing here yet! Come back later for more content!"
