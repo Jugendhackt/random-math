@@ -16,6 +16,9 @@ def generateJsonDatei(Aufgabentyp,Aufgabe,Loesungen,Tipp,Schritte = None):
             json.dumps({'Aufgabentyp': Aufgabentyp,'Aufgabe': Aufgabe,'Tipp': Tipp,'Schritte': Schritte,'Loesung': Loesung}),
 
             "Lineares_Gleichungssystem" :
+            json.dumps({'Aufgabentyp': Aufgabentyp,'Aufgabe': Aufgabe,'Tipp': Tipp,'Schritte': Schritte,'Loesung': Loesung}),
+
+            "Zahlendarstellung" :
             json.dumps({'Aufgabentyp': Aufgabentyp,'Aufgabe': Aufgabe,'Tipp': Tipp,'Schritte': Schritte,'Loesung': Loesung})}.get(Aufgabentyp)
 
 
