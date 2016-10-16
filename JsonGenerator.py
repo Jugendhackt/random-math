@@ -15,7 +15,7 @@ def generateJsonDatei(Aufgabentyp,Aufgabe,Loesungen,Tipp,Schritte = None):
             "Polynom_Nullstellen" :
             json.dumps({'Aufgabentyp': Aufgabentyp,'Aufgabe': Aufgabe,'Tipp': Tipp,'Schritte': Schritte,'Loesung': Loesung}),
 
-            "LGS" :
+            "Lineares_Gleichungssystem" :
             json.dumps({'Aufgabentyp': Aufgabentyp,'Aufgabe': Aufgabe,'Tipp': Tipp,'Schritte': Schritte,'Loesung': Loesung})}.get(Aufgabentyp)
 
 

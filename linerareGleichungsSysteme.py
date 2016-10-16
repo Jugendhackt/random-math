@@ -2,10 +2,12 @@ import random
 import math
 import lgsSchritte
 
+import JsonGenerator
+
 class LGS(object):
     def __init__(self):
         self.loesungen = [0, 0, 0]
-        self.typ = "Lineares Gleichungssytem"
+        self.typ = "Lineares_Gleichungssytem"
         self.tipp = ""
         self.lgs = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
 
@@ -14,7 +16,7 @@ class LGS(object):
     def anJson(self):
         fakListe = []
         for x in range(3):
-            print(x)
+#            print(x)
             self.loesungen[x] = random.randint(1, 5)
 
         for faktor in range(6):
@@ -34,8 +36,8 @@ class LGS(object):
         lgs_schritte.verkomplizieren(lgs_schritte.matrix)
         schritte = lgs_schritte.rueckwaerts()
 
-        anJson = [self.typ, lgs_schritte.aufgabe , self.loesungen, "Believe in Yourself!" , schritte]
-        return anJson
+        return JsonGenerator.generateJsonDatei(self.typ, lgs_schritte.aufgabe,
+                                  self.loesungen, "Believe in Yourself!" , schritte)
 
         """erg_1 = fakListe[0] * self.x1
         self.tipp += "%d = %d * x1 \n"%(erg_1, fakListe[0])
