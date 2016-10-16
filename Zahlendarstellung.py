@@ -32,20 +32,21 @@ def loeseAufgabe(dezimal, basis):
 
     return int(Ergebnis)
 
-def erzeuge Schritte(dezimal, basis):
+def erzeugeSchritte(dezimal, basis):
     SchritteArray = []
     while(dezimal >= basis):
         ZahlArray.append(dezimal % basis)
         dezimal = (dezimal-(dezimal % basis))/basis
-
-    
-
+        
+def anJson(Aufgabentyp, Aufgabe, Loesung, Tipp):
+    return JsonGenerator.generateJsonDatei(Aufgabentyp, Aufgabe, [Loesung], Tipp)
 
 
 Aufgabe = erstelleAufgabe(Dezimal, Basis)
 Loesung = loeseAufgabe(Dezimal, Basis)
 
-print(JsonGenerator.generateJsonDatei(Aufgabentyp, Aufgabe, [Loesung], Tipp))
+print(anJson(Aufgabentyp, Aufgabe, Loesung, Tipp))
+
 
 
 print(Aufgabe, Dezimal, Basis, Loesung)
