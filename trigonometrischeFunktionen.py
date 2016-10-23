@@ -18,7 +18,7 @@ class TrigonometriePendel(object):
         self.tipp = "Die Formel = s(t) = amplitude * sin(2 * pi * frequenz + phase)"
 
     def aufgabenText(self):
-        return "Welche auslenkung hat das Pendel zum Zeitpunkt eine Sekunde? Angaben: max. Auslenkung: %d m,\
+        return "Welche Auslenkung hat das Pendel zum Zeitpunkt eine Sekunde? Angaben: max. Auslenkung: %d m,\
          Frequenz %d Hz, Phasenverschiebung %d Pi (Bogenmass)"\
             %(self.amplitude, self.frequenz, self.phase)
 
